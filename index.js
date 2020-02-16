@@ -38,3 +38,20 @@ Object.name = "Inkyung";
 console.log(Object.name); // "Inkyung"
 
 console.log(Object.favFood[0].name);
+
+// Function
+function SayHello(anyName, anyNumber) {
+  console.log("Hello" + anyName + "and" + anyNumber);
+  console.log(`Hello" ${anyName}  "and" ${anyNumber}`);
+}
+
+const greeting = SayHello("You", 15);
+console.log(greeting);
+
+const calculator = {
+  puls: function(a, b) {
+    return a + b;
+  }
+};
+const plus = calculator.puls(5, 5);
+console.log(plus);
