@@ -8,7 +8,25 @@ const toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
 
-const toDos = [];
+let toDos = [];
+
+function filterFn(toDo) {
+  return toDo.id === 1;
+}
+
+function deleteToDo(event) {
+  // Delete HTML
+  const btn = event.target;
+  const li = btn.parentNode;
+  toDoList.removeChild(li);
+
+  // Delete data
+  const cleanToDos = toDos.filter(function(toDo) {
+    return toDo.id !== parseInt(li.id);
+  });
+  toDos = cleanToDos;
+  saveToDos();
+}
 
 function saveToDos() {
   // Basically js save data as string type in localStorage
@@ -23,6 +41,7 @@ function paintToDo(text) {
   const newId = toDos.length + 1;
 
   delBtn.innerText = "❌";
+  delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
   li.appendChild(delBtn);
   li.appendChild(span);
