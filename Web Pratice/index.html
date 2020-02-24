@@ -7,18 +7,27 @@
     <title>Web-Pratice</title>
   </head>
   <body>
-    <div class="js-clock">
-      <h1>00:00</h1>
-    </div>
-    <form class="js-form form">
-      <input type="text" placeholder="What is your name?" />
-    </form>
-    <h4 class="js-greetings greetings"></h4>
-    <form class="js-toDoForm">
-      <input type="text" placeholder="Write a to do" />
-    </form>
-    <ul class="js-toDoList"></ul>
-    <span class="js-weather"></span>
+    <main class="main">
+      <div class="main-blur"></div>
+      <span class="js-weather"></span>
+      <div class="main-ui__holder">
+        <div class="js-clock">
+          <h1>00:00:00</h1>
+        </div>
+        <form class="js-form form">
+          <input
+            class="name-input"
+            type="text"
+            placeholder="What's your name?"
+          />
+        </form>
+        <h2 class="js-greetings greetings"></h2>
+        <form class="js-toDoForm">
+          <input class="todo-input" type="text" placeholder="Write a to do" />
+        </form>
+        <ul class="js-toDoList"></ul>
+      </div>
+    </main>
     <script src="greeting.js"></script>
     <script src="clock.js"></script>
     <script src="todo.js"></script>

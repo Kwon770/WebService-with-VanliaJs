@@ -40,11 +40,17 @@ function paintToDo(text) {
   const span = document.createElement("span");
   const newId = toDos.length + 1;
 
+  span.innerText = "■ " + text;
+  span.style.cssText = `color: white`;
   delBtn.innerText = "❌";
+  delBtn.style.cssText = `
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  `;
   delBtn.addEventListener("click", deleteToDo);
-  span.innerText = text;
-  li.appendChild(delBtn);
+
   li.appendChild(span);
+  li.appendChild(delBtn);
   toDoList.appendChild(li);
   li.id = newId;
   const toDoObj = {
